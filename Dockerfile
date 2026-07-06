@@ -1,6 +1,6 @@
 # =========================================
 #  LexGuard AI — Combined Production Dockerfile
-#  Target: Google Cloud Run
+#  Target: Render / Google Cloud Run
 # =========================================
 
 # --- Phase 1: Build the React Frontend ---

@@ -1,0 +1,35 @@
+# =========================================
+#  LexGuard AI — Render Blueprint
+# =========================================
+services:
+  - type: web
+    name: lexguard-ai
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    region: oregon
+    plan: free
+    envVars:
+      - key: GEMINI_API_KEYS
+        sync: false
+      - key: TWILIO_ACCOUNT_SID
+        sync: false
+      - key: TWILIO_AUTH_TOKEN
+        sync: false
+      - key: TWILIO_FROM_NUMBER
+        sync: false
+      - key: TARGET_PHONE_NUMBER
+        sync: false
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_PASS
+        sync: false
+      - key: CORS_ORIGINS
+        value: "*"
+      - key: APP_ENV
+        value: production
+      - key: MAX_FILE_SIZE_MB
+        value: "25"
+      - key: MAX_PAGES
+        value: "150"
+      - key: PORT
+        value: "8080"
