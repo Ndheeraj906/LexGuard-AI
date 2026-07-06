@@ -8,7 +8,7 @@
 <p>
   <a href="https://lexguard-ai-4qgj.onrender.com/"><img src="https://img.shields.io/badge/🚀_LIVE_DEMO-Try_LexGuard_AI-e94560?style=for-the-badge&labelColor=1a1a2e" alt="Live Demo" /></a>
   &nbsp;
-  <a href="https://github.com/Ndheeraj906/LexGuard-AI/actions/workflows/test.yml"><img src="https://img.shields.io/github/actions/workflow/status/Ndheeraj906/LexGuard-AI/test.yml?branch=main&style=for-the-badge&label=CI&logo=githubactions&logoColor=white&labelColor=1a1a2e&color=4ecca3" alt="CI Status" /></a>
+  <a href="https://github.com/PromptWars-by-Ascent-hackathon/LexGuard-AI/actions/workflows/test.yml"><img src="https://img.shields.io/github/actions/workflow/status/PromptWars-by-Ascent-hackathon/LexGuard-AI/test.yml?branch=main&style=for-the-badge&label=CI&logo=githubactions&logoColor=white&labelColor=1a1a2e&color=4ecca3" alt="CI Status" /></a>
   &nbsp;
   <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-f5c542?style=for-the-badge&labelColor=1a1a2e" alt="License" /></a>
 </p>
@@ -435,7 +435,7 @@ graph TB
 ### 1️⃣ Clone
 
 ```bash
-git clone https://github.com/Ndheeraj906/LexGuard-AI.git
+git clone https://github.com/PromptWars-by-Ascent-hackathon/LexGuard-AI.git
 cd LexGuard-AI
 ```
 
@@ -654,9 +654,9 @@ Distributed under the **MIT License** — see [`LICENSE`](./LICENSE) for details
 
 <a href="https://lexguard-ai-4qgj.onrender.com/login"><img src="https://img.shields.io/badge/🚀_Live_Demo-e94560?style=for-the-badge&labelColor=1a1a2e" /></a>
 &nbsp;
-<a href="https://github.com/Ndheeraj906/LexGuard-AI"><img src="https://img.shields.io/badge/📂_Source_Code-4ecca3?style=for-the-badge&labelColor=1a1a2e" /></a>
+<a href="https://github.com/PromptWars-by-Ascent-hackathon/LexGuard-AI"><img src="https://img.shields.io/badge/📂_Source_Code-4ecca3?style=for-the-badge&labelColor=1a1a2e" /></a>
 &nbsp;
-<a href="https://github.com/Ndheeraj906/LexGuard-AI/issues"><img src="https://img.shields.io/badge/🐛_Report_Bug-f5c542?style=for-the-badge&labelColor=1a1a2e" /></a>
+<a href="https://github.com/PromptWars-by-Ascent-hackathon/LexGuard-AI/issues"><img src="https://img.shields.io/badge/🐛_Report_Bug-f5c542?style=for-the-badge&labelColor=1a1a2e" /></a>
 
 <br /><br />
 
