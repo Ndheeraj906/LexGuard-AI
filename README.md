@@ -19,7 +19,7 @@
   <img src="https://img.shields.io/badge/Vite_8-646CFF?style=flat-square&logo=vite&logoColor=white" alt="Vite" />
   <img src="https://img.shields.io/badge/Node.js_22-339933?style=flat-square&logo=node.js&logoColor=white" alt="Node" />
   <img src="https://img.shields.io/badge/Express_5-000000?style=flat-square&logo=express&logoColor=white" alt="Express" />
-  <img src="https://img.shields.io/badge/Cloud_Run-4285F4?style=flat-square&logo=googlecloud&logoColor=white" alt="Cloud Run" />
+  <img src="https://img.shields.io/badge/Render-46E3B7?style=flat-square&logo=render&logoColor=white" alt="Render" />
   <img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black" alt="Firebase" />
   <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
 </p>
@@ -216,8 +216,8 @@ One CRITICAL clause won't get buried by 20 boilerplate LOW clauses. The formula 
 </tr>
 <tr>
 <td>⚙️ <strong>Backend API</strong></td>
-<td><a href="https://lexguard-backend-519047861069.us-central1.run.app"><code>lexguard-backend-*.us-central1.run.app</code></a></td>
-<td>Google Cloud Run</td>
+<td><a href="https://lexguard-ai-4qgj.onrender.com/"><code>lexguard-ai-4qgj.onrender.com</code></a></td>
+<td>Render Web Service</td>
 <td>✅ Live</td>
 </tr>
 </table>
@@ -237,7 +237,7 @@ graph LR
         A["🤖 Gemini 2.5 Flash\n(All 3 AI Agents)"]
         B["🏷️ Cloud NL API\n(Entity Extraction)"]
         C["🔤 Cloud Translate\n(100+ Languages)"]
-        D["🚀 Cloud Run\n(Backend Hosting)"]
+        D["🚀 Render\n(App Hosting)"]
         E["🔥 Firebase\n(Frontend Hosting)"]
         F["🔒 Secret Manager\n(API Key Storage)"]
     end
@@ -256,7 +256,7 @@ graph LR
 | **Gemini 2.5 Flash** | `services/googleGemini.js` | Powers all 3 AI agents — clause extraction, risk classification, deep legal reasoning, plain-English explanation, negotiation strategy |
 | **Cloud NL API** | `services/googleNaturalLanguage.js` | Extracts named entities — parties, organizations, dates, monetary values, jurisdictions |
 | **Cloud Translate** | `services/googleTranslate.js` | Auto-detects language; translates non-English contracts to English before pipeline |
-| **Cloud Run** | `infrastructure/cloudbuild.yaml` | Serverless backend deployment with auto-scaling (2 vCPU, 2GB RAM, max 10 instances) |
+| **Render** | `render.yaml` | Web service deployment with automated Docker builds |
 | **Firebase Hosting** | `firebase.json` | CDN-backed SPA hosting with SPA rewrites |
 | **Secret Manager** | `cloudbuild.yaml` | Secure API key storage for production |
 
@@ -316,13 +316,13 @@ LexGuard-AI/
 │   │   └── tests/
 │   │       ├── unit.test.js              Unit tests (node:test)
 │   │       └── integration.test.js       Integration tests
-│   ├── Dockerfile                        Node 22-alpine for Cloud Run
+│   ├── Dockerfile                        Node 22-alpine for Render
 │   └── .env.example                      Environment variable template
 │
 ├── 🐍 backend/                           Python/FastAPI (Legacy 5-agent version)
 │
 ├── 🏗️ infrastructure/
-│   ├── cloudbuild.yaml                   Cloud Build: Docker → GCR → Cloud Run
+│   ├── render.yaml                       Render Infrastructure as Code (Blueprint)
 │   ├── firestore.rules                   Per-user document isolation
 │   ├── firestore.indexes.json            Firestore indexes
 │   └── storage.rules                     Per-user upload isolation
@@ -368,7 +368,7 @@ graph TB
     end
 
     subgraph INFRA["☁️ Infrastructure"]
-        CR["Cloud Run"]
+        CR["Render"]
         FH["Firebase Hosting"]
         CB["Cloud Build"]
         SM["Secret Manager"]
@@ -494,28 +494,16 @@ npm run lint      # ESLint code quality
 ## 🐳 Production Deployment
 
 <details>
-<summary><strong>☁️ Google Cloud Run (Backend)</strong></summary>
+<summary><strong>🚀 Render (Full Stack)</strong></summary>
 
 <br />
 
-```bash
-cd backend-node
+LexGuard AI is configured for 1-click deployment on Render using the provided `render.yaml` blueprint.
 
-# Build & push Docker image
-gcloud builds submit --tag gcr.io/YOUR_PROJECT/lexguard-backend
-
-# Deploy to Cloud Run
-gcloud run deploy lexguard-backend \
-  --image gcr.io/YOUR_PROJECT/lexguard-backend \
-  --platform managed \
-  --region us-central1 \
-  --allow-unauthenticated \
-  --memory 2Gi \
-  --cpu 2 \
-  --max-instances 10 \
-  --set-env-vars GCP_PROJECT_ID=YOUR_PROJECT \
-  --set-secrets GEMINI_API_KEY=lexguard-gemini-key:latest
-```
+1. Connect your GitHub repository to Render.
+2. Render will automatically detect the `render.yaml` blueprint.
+3. Configure your environment variables in the dashboard.
+4. Render will build the Dockerfile and deploy the application.
 
 </details>
 
@@ -609,7 +597,7 @@ graph LR
 
     B & C & D --> E{"All Pass?"}
     E -- Yes --> F["🐳 Cloud Build\nDocker → GCR"]
-    F --> G["🚀 Cloud Run\nAuto-Deploy"]
+    F --> G["🚀 Render\nAuto-Deploy"]
 
     style A fill:#1a1a2e,stroke:#e94560,color:#fff
     style B fill:#1a1a2e,stroke:#4ecca3,color:#fff
